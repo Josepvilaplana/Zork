@@ -6,9 +6,9 @@
 class Player : public Creature
 {
 public:
-	Player();
+	Player(string name, string description);
 	~Player();
 
 private:
-
+	bool alive;
 };

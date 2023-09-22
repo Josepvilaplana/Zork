@@ -6,15 +6,15 @@
 enum Direction
 {
 	East,
-	West,
 	North,
+	West,
 	South
 };
 
 class Exit : public Entity
 {
 public:
-	Exit();
+	Exit(Direction direction, Room* source, Room* destination);
 	~Exit();
 
 private:
@@ -22,4 +22,5 @@ private:
 	Room* source;
 	Room* destination;
 
+	Direction InvertedDirection(Direction direction);
 };
