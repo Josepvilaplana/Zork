@@ -1,6 +1,7 @@
 #pragma once
 
 #include"room.h"
+#include"entity.h"
 
 enum Direction
 {
@@ -10,7 +11,7 @@ enum Direction
 	South
 };
 
-class Exit
+class Exit : public Entity
 {
 public:
 	Exit();

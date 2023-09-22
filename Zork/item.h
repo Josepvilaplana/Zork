@@ -1,6 +1,8 @@
 #pragma once
 
-class Item
+#include"entity.h"
+
+class Item : public Entity
 {
 public:
 	Item();

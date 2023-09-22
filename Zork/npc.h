@@ -1,6 +1,8 @@
 #pragma once
 
-class NPC
+#include"creature.h"
+
+class NPC : public Creature
 {
 public:
 	NPC();

@@ -1,8 +1,9 @@
 #pragma once
 
 #include"room.h"
+#include"entity.h"
 
-class Creature
+class Creature : public Entity
 {
 public:
 	Creature();
