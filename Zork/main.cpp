@@ -3,11 +3,13 @@
 
 using namespace std;
 
-int main() {
+int main() 
+{
 	cout << "Welcome <TODO>" << endl;
 	string action; //Player action
 
-	while (true) {
+	while (true) 
+	{
 		cin >> action;
 		
 	}
