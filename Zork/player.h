@@ -3,6 +3,11 @@
 #include"player.h"
 #include"creature.h"
 
+enum PlayerActions
+{
+	LOOK
+};
+
 class Player : public Creature
 {
 public:
