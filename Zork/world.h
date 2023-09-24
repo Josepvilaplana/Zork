@@ -7,6 +7,7 @@
 #include "exit.h"
 #include "item.h"
 #include "player.h"
+#include "utils.h"
 
 using namespace std;
 
@@ -15,8 +16,7 @@ class World
 public:
 	World();
 	~World();
-
+	void ActionSystem(vector<string>& action);
 private:
-	Player* player;
 	vector<Entity*> entities;
 };

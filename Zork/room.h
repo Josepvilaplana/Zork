@@ -6,6 +6,15 @@
 
 class Item;
 
+enum RoomName
+{
+	FOREST,
+	LAKE,
+	VOLCANO,
+	BOSS,
+	MINE
+};
+
 class Room : public Entity
 {
 public:

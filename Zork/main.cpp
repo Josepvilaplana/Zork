@@ -20,11 +20,7 @@ int main()
 	while (true) 
 	{
         ReadCommand(action);
-		for (int i = 0; i < action.size(); i++)
-		{
-			cout << action[i] << endl;
-		}
-        ActionSystem(action);
+        gameWorld.ActionSystem(action);
 	}
 
 	return 0;

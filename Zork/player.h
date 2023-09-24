@@ -2,11 +2,7 @@
 
 #include"player.h"
 #include"creature.h"
-
-enum PlayerActions
-{
-	LOOK
-};
+#include<vector>
 
 class Player : public Creature
 {
@@ -16,4 +12,5 @@ public:
 
 private:
 	bool alive;
+	RoomName currentRoom;
 };

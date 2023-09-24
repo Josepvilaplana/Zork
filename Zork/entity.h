@@ -1,5 +1,6 @@
 #pragma once
 
+#include<iostream>
 #include<string>
 #include<list>
 
@@ -26,6 +27,7 @@ public:
 	list<Entity*> contains;
 
 	virtual void Update();
+	void Look();
 
 private:
 

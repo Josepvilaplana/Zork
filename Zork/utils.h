@@ -1,6 +1,8 @@
 #pragma once
 
-void ReadCommand(vector<string>& action)
+#include<conio.h>
+
+inline void ReadCommand(vector<string>& action)
 {
     char playerKeyInput;
     string temp;
@@ -30,7 +32,25 @@ void ReadCommand(vector<string>& action)
     }
 }
 
-void ActionSystem(vector<string>& action)
+inline bool EntityExists(string name, vector<Entity*>& entities)
 {
-    action.clear();
+    for (int i = 0; i < entities.size();i++)
+    {
+        if (entities[i]->name == name)
+        {
+            return true;
+        }
+    }
+    return false;
+}
+
+inline int FindEntity(string name, vector<Entity*>& entities)
+{
+    for (int i = 0; i < entities.size();i++)
+    {
+        if (entities[i]->name == name)
+        {
+            return i;
+        }
+    }
 }
