@@ -153,6 +153,7 @@
     <ClInclude Include="creature.h" />
     <ClInclude Include="entity.h" />
     <ClInclude Include="exit.h" />
+    <ClInclude Include="utils.h" />
     <ClInclude Include="item.h" />
     <ClInclude Include="npc.h" />
     <ClInclude Include="player.h" />
