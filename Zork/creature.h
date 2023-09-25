@@ -10,6 +10,7 @@ public:
 	~Creature();
 
 	Room* location;
+	bool alive;
 
 private:
 

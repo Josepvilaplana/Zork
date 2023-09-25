@@ -8,11 +8,12 @@ using namespace std;
 
 enum EntityType
 {
+	NO_TYPE,
 	CREATURE,
 	EXIT,
 	ROOM,
 	ITEM,
-	NPC,
+	ENEMY,
 	PLAYER
 };
 
@@ -26,7 +27,6 @@ public:
 	string description;
 	list<Entity*> contains;
 
-	virtual void Update();
 	void Look();
 
 private:

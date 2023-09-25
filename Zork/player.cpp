@@ -1,16 +1,16 @@
 #include"player.h"
 #include"room.h"
 
-Player::Player(string name, string description)
+Player::Player(string name, string description, Room* startingRoom)
 {
+	type = PLAYER;
 	this->name = name;
 	this->description = description;
-	this->alive = true;
-	currentRoom = RoomName::FOREST;
+	alive = true;
+	location = startingRoom;
 }
 
 Player::~Player()
 {
 
 }
-

@@ -32,16 +32,16 @@ inline void ReadCommand(vector<string>& action)
     }
 }
 
-inline bool EntityExists(string name, vector<Entity*>& entities)
+inline EntityType EntityExists(string name, vector<Entity*>& entities)
 {
     for (int i = 0; i < entities.size();i++)
     {
         if (entities[i]->name == name)
         {
-            return true;
+            return entities[i]->type;
         }
     }
-    return false;
+    return (EntityType)0;
 }
 
 inline int FindEntity(string name, vector<Entity*>& entities)

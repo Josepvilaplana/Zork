@@ -4,11 +4,11 @@ World::World()
 {
 	//WORLD DEFINITION
 	//Creates world rooms
-	Room* room1 = new Room("Forest", "Room 1 description TODO");
-	Room* room2 = new Room("Lake", "Room 2 description TODO");
-	Room* room3 = new Room("Volcano", "Room 3 description TODO");
-	Room* room4 = new Room("BossRoom", "Room 4 description TODO");
-	Room* room5 = new Room("Mine", "Room 5 description TODO");
+	Room* room1 = new Room("forest", "Room 1 description TODO");
+	Room* room2 = new Room("lake", "Room 2 description TODO");
+	Room* room3 = new Room("volcano", "Room 3 description TODO");
+	Room* room4 = new Room("bossRoom", "Room 4 description TODO");
+	Room* room5 = new Room("mine", "Room 5 description TODO");
 
 	//Creates the available exits of the rooms
 	Exit* exit1 = new Exit(East, room1, room2);
@@ -17,13 +17,15 @@ World::World()
 	Exit* exit4 = new Exit(North, room4, room5);
 
 	//Creates the main character
-	Player* player = new Player("Player", "Player description TODO");
+	Player* player = new Player("player", "Player description TODO", room1);
 
 	//Creates the items available at the rooms
-	Item* item1 = new Item("Sword", "Item1 description TODO", room2, true);
-	Item* item2 = new Item("Chest", "Item2 description TODO", room3, false);
-	Item* item3 = new Item("Gold", "Item3 description TODO", item2, true);
-	Item* item4 = new Item("Shield", "Item4 description TODO", room5, true);
+	Item* item1 = new Item("sword", "Item1 description TODO", room2, true);
+	Item* item2 = new Item("chest", "Item2 description TODO", room3, false);
+	Item* item3 = new Item("gold", "Item3 description TODO", item2, true);
+	Item* item4 = new Item("shield", "Item4 description TODO", room5, true);
+
+	item1->PickUp();
 
 	entities.push_back(room1);
 	entities.push_back(room2);
@@ -59,11 +61,22 @@ void World::ActionSystem(vector<string>& action)
     case 1:
         if (action[0] == "look")
         {
-			if (EntityExists("Player", entities))
+			if (EntityExists("player", entities))
 			{
-				entities[FindEntity("Player", entities)]->Look();
+				Player* temp = (Player*)entities[FindEntity("player", entities)];
+				temp->location->Look();
 			}
         }
+		break;
+	case 2:
+		if (action[0] == "look")
+		{
+			if (EntityExists(action[1], entities) == EntityType::ITEM)
+			{
+				Item* temp = (Item*)entities[FindEntity(action[1], entities)];
+				if (temp->IsInInventory()) temp->Look();
+			}
+		}
 		break;
     }
     action.clear();
